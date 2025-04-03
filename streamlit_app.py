@@ -80,7 +80,7 @@ if submit_button and query:
     data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
     
     if response.status_code == 200:
-        st.write("🔍 Respuesta:", response)
+        st.write("🔍 Respuesta:", data)
                  #response.json().get("response", "⚠️ No 'response' key found in JSON."))
     else:
         st.error(f"❌ API Error: {response.status_code}")
