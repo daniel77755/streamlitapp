@@ -79,7 +79,7 @@ if submit_button and query:
     response_api = connect_api(query)
     st.write(response_api)
     data = response_api.json()
-    if response.status_code != 200:
+    if response_api.status_code != 200:
         st.write("⚠️ No 'response' key found in JSON.", response_api)
     else:
         st.write(data,"fdsf")
