@@ -80,9 +80,6 @@ if submit_button and query:
     data = response_api.json()
     if "response" not in data:
         st.write("⚠️ No 'response' key found in JSON.", response_api)
-    
-    data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
-    st.write(data)
-
     else:
-        st.error(f"❌ API Error: {response.status_code}")
+        data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
+        st.write(data)
