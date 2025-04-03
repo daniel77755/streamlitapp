@@ -81,5 +81,6 @@ if submit_button and query:
     if response.status_code != 200:
         st.write("⚠️ No 'response' key found in JSON.", response_api)
     else:
+        st.write(data,"fdsf")
         data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
         st.write(data)
