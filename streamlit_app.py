@@ -76,7 +76,9 @@ with st.form(key='chat_form'):
 
 if submit_button and query:
     response = connect_api(query)
-
+    data = response.json()
+    data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
+    
     if response.status_code == 200:
         st.write("🔍 Respuesta:", response)
                  #response.json().get("response", "⚠️ No 'response' key found in JSON."))
