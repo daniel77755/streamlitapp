@@ -78,6 +78,7 @@ with st.form(key='chat_form'):
 if submit_button and query:
     response = connect_api(query)
     data = response.json()
+    data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
     st.write(data,"rtab")
     #data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
     
