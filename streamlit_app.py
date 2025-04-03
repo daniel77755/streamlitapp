@@ -66,7 +66,7 @@ def connect_api(query):
         "input_type": "chat"
     }
     
-    return requests.post(f"{BASE_API_URL}/lf/{LANGFLOW_ID}/api/v1/run/{FLOW_ID}", json=payload, headers=headers, timeout=60)
+    return requests.post(f"{BASE_API_URL}/lf/{LANGFLOW_ID}/api/v1/run/{FLOW_ID}", json=payload, headers=headers, timeout=90)
     
 
 # Usa st.form para agrupar el input y botón
