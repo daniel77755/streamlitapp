@@ -51,22 +51,21 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 def connect_api(query):
-    BASE_API_URL = "https://api.langflow.astra.datastax.com"
-    LANGFLOW_ID = "40e98986-3486-471e-8c5d-6a27d01f3d78"
-    FLOW_ID = "a4bb8b81-8469-4cd6-8898-d31597bed217"
-    APPLICATION_TOKEN = "AstraCS:zwxnTFZtyOUjGKTsnljsrSZc:72bb72b2f2e9336a259fc81e62b194201f59959dc6cf38a766e0af0f9b9a5eb2"
+    #BASE_API_URL = "https://api.langflow.astra.datastax.com"
+    #LANGFLOW_ID = "40e98986-3486-471e-8c5d-6a27d01f3d78"
+    #FLOW_ID = "a4bb8b81-8469-4cd6-8898-d31597bed217"
+    #APPLICATION_TOKEN = "AstraCS:zwxnTFZtyOUjGKTsnljsrSZc:72bb72b2f2e9336a259fc81e62b194201f59959dc6cf38a766e0af0f9b9a5eb2"
     headers = {
         "Authorization": f"Bearer {APPLICATION_TOKEN}",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Origin": "https://mi-app.streamlit.app"
     }
 
     payload = {
-        "input_value": query,
-        "output_type": "chat",
-        "input_type": "chat"
+        "data": {"question": query}
     }
 
-    responses = requests.post(f"{BASE_API_URL}/lf/{LANGFLOW_ID}/api/v1/run/{FLOW_ID}", json=payload, headers=headers, timeout=90) 
+    responses = requests.post(f"https://endpoint-ai-agent-bi-827673120223.us-central1.run.app, headers=headers, timeout=90) 
     return responses
     
 
@@ -82,5 +81,6 @@ if submit_button and query:
         st.write("⚠️ No 'response' key found in JSON.", response_api)
     else:
         data = response_api.json()
+        st.write(data)
         data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
         st.write(data)
