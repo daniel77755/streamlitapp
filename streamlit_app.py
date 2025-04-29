@@ -58,7 +58,7 @@ def connect_api(query):
     #headers = {
         #"Authorization": f"Bearer {APPLICATION_TOKEN}",
         #"Content-Type": "application/json",
-        "Origin": "https://mi-app.streamlit.app"
+        #"Origin": "https://mi-app.streamlit.app"
     #}
     
     payload = {
