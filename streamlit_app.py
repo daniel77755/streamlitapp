@@ -83,7 +83,9 @@ if submit_button and query:
         st.write("Texto de respuesta:", response_api.text)
         st.write("⚠️ No 'response' key found in JSON.", response_api)
     else:
-        data = response_api.json()
+        data = response_api.text
         st.write(data)
-        data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
-        st.write(data)
+        #data = response_api.json()
+        #st.write(data)
+        #data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
+        #st.write(data)
