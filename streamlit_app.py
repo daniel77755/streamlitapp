@@ -66,7 +66,7 @@ def connect_api(query):
         "data": {"question": query}
     })
 
-    responses = requests.post(f"https://endpoint-ai-agent-bi-mgdaz5l5xq-uc.a.run.app", headers=headers, data=payload) 
+    responses = requests.post(f"https://endpoint-ai-agent-bi-827673120223.us-central1.run.app", headers=headers, data=payload) 
     return responses
     
 
