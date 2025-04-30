@@ -55,12 +55,11 @@ def connect_api(query):
     #LANGFLOW_ID = "40e98986-3486-471e-8c5d-6a27d01f3d78"
     #FLOW_ID = "a4bb8b81-8469-4cd6-8898-d31597bed217"
     #APPLICATION_TOKEN = "AstraCS:zwxnTFZtyOUjGKTsnljsrSZc:72bb72b2f2e9336a259fc81e62b194201f59959dc6cf38a766e0af0f9b9a5eb2"
-    #headers = {
-        #"Authorization": f"Bearer {APPLICATION_TOKEN}",
-        #"Content-Type": "application/json",
-        #"Origin": "https://mi-app.streamlit.app"
-    #}
-    
+    headers = {
+        "Content-Type": "application/json",
+        "Origin": "https://mi-app.streamlit.app"
+    }
+    #"Authorization": f"Bearer {APPLICATION_TOKEN}",
     payload = {
         "data": {"question": query}
     }
