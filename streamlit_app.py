@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import json
 
 # API_URL = "https://api1-zv36.onrender.com/chat"  # Replace with your API URL
 
@@ -61,9 +62,9 @@ def connect_api(query):
         "Origin": "https://mi-app.streamlit.app"
     }
     
-    payload = {
+    payload = json.dumps({
         "data": {"question": query}
-    }
+    })
 
     responses = requests.post(f"https://endpoint-ai-agent-bi-mgdaz5l5xq-uc.a.run.app", headers=headers, data=payload,timeout=90) 
     return responses
