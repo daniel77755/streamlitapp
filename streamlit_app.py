@@ -57,9 +57,10 @@ def connect_api(query):
     #APPLICATION_TOKEN = "AstraCS:zwxnTFZtyOUjGKTsnljsrSZc:72bb72b2f2e9336a259fc81e62b194201f59959dc6cf38a766e0af0f9b9a5eb2"
     headers = {
         "Content-Type": "application/json",
-        "Origin": "https://mi-app.streamlit.app"
+        "Origin": "https://mi-app.streamlit.app",
+        "Authorization": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA3YjgwYTM2NTQyODUyNWY4YmY3Y2QwODQ2ZDc0YThlZTRlZjM2MjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA0MTMzMzIzMTQyODMyNTkyOTQ3IiwiaGQiOiJoYWJpLmNvIiwiZW1haWwiOiJqZWlubmVyYmFlekBoYWJpLmNvIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJzcVM0RUxrbDdpY1A5QU1sTnM0NkxRIiwibmJmIjoxNzQ2MDIyNjUzLCJpYXQiOjE3NDYwMjI5NTMsImV4cCI6MTc0NjAyNjU1MywianRpIjoiNjg2NzE2ODgxNTFhNGQ0ODY0Zjc4MWJhYzg0MTI3OTExYzUxOWE4YSJ9.cl8EZzocHvRt1SNDfBWckmbKGQqKcBgp8EiYGOUz9Cqq6Vk0snd4zJH_xdd8Qnm8Qr3NYgaBHhZxvO6moVerz3fu5XmadIaE8UivDNwYxKexqFBbSV5q8NV4Rk2oHnwJOAlDtIFfILLYl4N8Gkbyfzm8Vkc8JVVcRKIG0lYgruAwjLTa31L6w_gAOgsgMs8zj3N3qNQqxXBUVrolvq6Lr6LKDO5zOCupxAjG_vGzoAG-3rselk5bQychGf6HmW4RcH_CCx0ZsVXxfbzrYv_MNOjS-iNmmW5YQvss8JSjK3uAS92eFxOPB1M7urp3jxPbNDxMRkX8fkWJtketdciUQw",
     }
-    #"Authorization": f"Bearer {APPLICATION_TOKEN}",
+    
     payload = {
         "data": {"question": query}
     }
