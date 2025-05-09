@@ -56,9 +56,10 @@ def connect_api(query):
     #LANGFLOW_ID = "40e98986-3486-471e-8c5d-6a27d01f3d78"
     #FLOW_ID = "a4bb8b81-8469-4cd6-8898-d31597bed217"
     #APPLICATION_TOKEN = "AstraCS:zwxnTFZtyOUjGKTsnljsrSZc:72bb72b2f2e9336a259fc81e62b194201f59959dc6cf38a766e0af0f9b9a5eb2"
-    #"Authorization": "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImUxNGMzN2Q2ZTVjNzU2ZThiNzJmZGI1MDA0YzBjYzM1NjMzNzkyNGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA0MTMzMzIzMTQyODMyNTkyOTQ3IiwiaGQiOiJoYWJpLmNvIiwiZW1haWwiOiJqZWlubmVyYmFlekBoYWJpLmNvIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJtLVdLTmJHLVcwdEFPZklsSnlpMFF3IiwibmJmIjoxNzQ2NzE5MjQzLCJpYXQiOjE3NDY3MTk1NDMsImV4cCI6MTc0NjcyMzE0MywianRpIjoiYjc3NWMyOGMxNjJkZTc5YzUyMmI4ODA5M2RjMDFmNGJhMDY4MzQ2OCJ9.fcQIlNHuvmLFNK2cE4s_NMnv_qZN7zTUDDUk1WN9YYMXSOju-M2BYlzYR41k4NzNQh1sSeBTVCcfX78TvoYvzn4EjX07GkwDhBzrUB5wNql0zkD7T1Z--prSNy1gOXa8c68d7allvvrCXH-SaGcn0exctUsauNA3GishgtzEFiK1FfBoqT0LiP8bwHXJn_b5jFeoyzHRh1tw_RtLE7FpaLmjkbCUSyckimiZYn3b9Yx1Lqre3cE2SRUQw3xUS_AGcp4Cj2T74Ygm6aDu98fszHTFEssq5BpWmOP8fT2Sz86JZ9fQGTcEZWwXlTBjeuy6knVkLtlg4OBKa7ubKexdfw",
+    #AIzaSyBbyxq3vVc46R9UB3LUygme-O2eqWyrus8
+    
     headers = {
-        "x-api-key": "AIzaSyBbyxq3vVc46R9UB3LUygme-O2eqWyrus8",
+        "x-api-key": "AIzaSyBb2222222-1111111111",
         "Content-Type": "application/json",
         "Origin": "https://mi-app.streamlit.app"
     }
