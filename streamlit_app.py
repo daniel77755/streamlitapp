@@ -68,7 +68,7 @@ def connect_api(query):
     })
 
     #responses = requests.post("https://endpoint-ai-agent-bi-827673120223.us-central1.run.app", headers=headers, data=payload) 
-    responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
+    responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers)
     return responses
     
 
