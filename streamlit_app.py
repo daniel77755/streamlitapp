@@ -18,8 +18,6 @@ col1, col2 = st.columns([3,1])
 with col1:
     st.markdown("")  # Espacio vacío para dejar la imagen sola en la fila
 
-with col2:
-    st.image("logo_hc.png", width=120)
     
 # Ahora crea otra fila para centrar el texto debajo
 st.markdown("<h1 style='text-align: center; margin-top: 20px;'>Agente Habicredit</h1>", unsafe_allow_html=True)
