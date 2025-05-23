@@ -19,7 +19,7 @@ with col1:
     st.markdown("")  # Espacio vacío para dejar la imagen sola en la fila
 
 with col2:
-    st.image("logohabi.png", width=150)
+    st.image("logohabi.png", width=100)
 
     
 # Ahora crea otra fila para centrar el texto debajo
