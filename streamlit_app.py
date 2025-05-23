@@ -97,8 +97,10 @@ if submit_button and query:
         st.write("Texto de respuesta:", response_api.text)
         st.write("⚠️ No 'response' key found in JSON.", response_api)
     else:
-        data = response_api.text
-        st.write(data)
+        st.session_state.respuesta = response_api.text
+        st.session_state.response_shown = True
+        #data = response_api.text
+        #st.write(data)
 
 # Mostrar respuesta y botones de calificación
 if st.session_state.get("response_shown"):
