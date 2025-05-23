@@ -28,14 +28,6 @@ st.markdown("<h1 style='text-align: center; margin-top: 20px;'>Agente Habicredit
 
 st.markdown("""
     <style>
-    .stform_submit_button>button {
-        background-color: #C79BFF !important;  /* Morado claro */
-        color: white !important;               /* Letras blancas */
-        border: none;
-        padding: 0.5em 1em;
-        border-radius: 8px;
-        font-weight: bold;
-    }
     .stform_submit_button>button:hover {
         background-color: #7cdb91; /* Green */
         color: #7cdb91;
