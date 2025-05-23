@@ -47,10 +47,10 @@ st.markdown("""
 
     /* CSS for changing the border color and shadow of the text input box */
     .stTextInput>div>div>input {
-        #border: 2px solid #7C01FF; /* Blue border color */
-        #box-shadow: 2px 2px 5px rgba(124,1,255,1.000); /* Default shadow */
-        border: 2px solid #7C01FF !important;       /* Contorno morado */
-        box-shadow: 2px 2px 5px rgba(124,1,255,0.5);
+        border: 2px solid #7C01FF; /* Blue border color */
+        box-shadow: 2px 2px 5px rgba(124,1,255,1.000); /* Default shadow */
+        #border: 2px solid #7C01FF !important;       /* Contorno morado */
+        #box-shadow: 2px 2px 5px rgba(124,1,255,0.5);
     }
 
     /* New CSS for changing the shadow color of the text input when hovered */
