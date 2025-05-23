@@ -101,7 +101,7 @@ if submit_button and query:
         st.write(data)
 
 # Mostrar respuesta y botones de calificación
-if st.session_state.response_shown:
+if st.session_state.get("response_shown"):
     st.markdown(f"**💬 Respuesta:** {st.session_state.respuesta}")
 
     col_like, col_dislike = st.columns([1, 1])
