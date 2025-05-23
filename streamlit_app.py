@@ -31,12 +31,7 @@ st.markdown("""
     .stform_submit_button>button:hover {
         #background-color: #7cdb91; /* Green */
         #color: #7cdb91;
-        background-color: #C79BFF !important;  /* Morado claro */
-        color: white !important;               /* Letras blancas */
-        border: none;
-        padding: 0.5em 1em;
-        border-radius: 8px;
-        font-weight: bold;
+        background-color: #B86FFF !important;
     }
 
 
