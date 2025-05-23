@@ -4,12 +4,23 @@ import json
 
 # API_URL = "https://api1-zv36.onrender.com/chat"  # Replace with your API URL
 
-col1, col2 = st.columns([3,1])
 
+# Inicializa variables de sesión
+if "feedback" not in st.session_state:
+    st.session_state.feedback = None
+if "response_shown" not in st.session_state:
+    st.session_state.response_shown = False
+if "respuesta" not in st.session_state:
+    st.session_state.respuesta = ""
+
+col1, col2 = st.columns([3,1])
 
 with col1:
     st.markdown("")  # Espacio vacío para dejar la imagen sola en la fila
 
+with col2:
+    st.image("logo_hc.png", width=120)
+    
 # Ahora crea otra fila para centrar el texto debajo
 st.markdown("<h1 style='text-align: center; margin-top: 20px;'>Agente Habicredit</h1>", unsafe_allow_html=True)
 
@@ -67,7 +78,6 @@ def connect_api(query):
         "data": {"question": query}
     })
 
-    #responses = requests.post("https://endpoint-ai-agent-bi-827673120223.us-central1.run.app", headers=headers, data=payload) 
     responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
     return responses
     
@@ -78,8 +88,12 @@ with st.form(key='chat_form'):
     submit_button = st.form_submit_button(label='Responder')
 
 if submit_button and query:
+    st.session_state.feedback = None
+    st.session_state.response_shown = False
+    st.session_state.respuesta = ""
+    
     response_api = connect_api(query)
-    st.write(response_api)
+    
     if response_api.status_code != 200:
         st.write("⚠️ Error HTTP:", response_api.status_code)
         st.write("Texto de respuesta:", response_api.text)
@@ -87,7 +101,21 @@ if submit_button and query:
     else:
         data = response_api.text
         st.write(data)
-        #data = response_api.json()
-        #st.write(data)
-        #data = data["outputs"][0]["outputs"][0]["results"]["message"]["text"]
-        #st.write(data)
+
+# Mostrar respuesta y botones de calificación
+if st.session_state.response_shown:
+    st.markdown(f"**💬 Respuesta:** {st.session_state.respuesta}")
+
+    col_like, col_dislike = st.columns([1, 1])
+    with col_like:
+        if st.button("👍 Me gusta"):
+            st.session_state.feedback = "like"
+    with col_dislike:
+        if st.button("👎 No me gusta"):
+            st.session_state.feedback = "dislike"
+
+    # Mostrar estado de calificación
+    if st.session_state.feedback == "like":
+        st.success("Has calificado esta respuesta como: 👍 Me gusta")
+    elif st.session_state.feedback == "dislike":
+        st.warning("Has calificado esta respuesta como: 👎 No me gusta")
