@@ -65,7 +65,23 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-
+def calification_user(query, answer, feedback):
+    headers = {
+        "x-api-key": "AIzaSyBb2222222-1111111111",
+        "Content-Type": "application/json",
+        "Origin": "https://mi-app.streamlit.app"
+    }
+    payload = json.dumps({
+        "data": {
+            "question": query,
+            "response": answer,
+            "feedback": feedback
+        }
+    })
+    #responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
+    return 200
+    
+    
 def connect_api(query):
     #BASE_API_URL = "https://api.langflow.astra.datastax.com"
     #LANGFLOW_ID = "40e98986-3486-471e-8c5d-6a27d01f3d78"
@@ -122,6 +138,10 @@ if st.session_state.get("response_shown"):
 
     # Mostrar estado de calificación
     if st.session_state.feedback == "like":
+        calification_user(query,st.session_state.respuesta,"1")
         st.success("Has calificado esta respuesta como: 👍 Me gusta")
     elif st.session_state.feedback == "dislike":
+        calification_user(query,st.session_state.respuesta,"0")
         st.warning("Has calificado esta respuesta como: 👎 No me gusta")
+
+    
