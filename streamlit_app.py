@@ -82,7 +82,7 @@ def connect_api(query):
     return responses
     
 
-# Usa st.form para agrupar el input y botón
+# Usa st.form para agrupar el input y botón 
 with st.form(key='chat_form'):
     query = st.text_input("Realiza las preguntas que hacen tus brokers:")
     submit_button = st.form_submit_button(label='Responder')
