@@ -119,6 +119,7 @@ if submit_button and query:
     st.session_state.rating = None
     st.session_state.feedback = None
     st.session_state.response_shown = False
+    st.session_state.score_ready = False
     
     if response_api.status_code != 200:
         st.write("⚠️ Error HTTP:", response_api.status_code)
@@ -135,7 +136,7 @@ if st.session_state.get("response_shown"):
     st.markdown(f"**💬 Respuesta:** {st.session_state.respuesta}")
 
     # Determinar si se debe deshabilitar el selector
-    disabled = st.session_state.feedback is not None
+    disabled = st.session_state.score_ready
 
     #col_like, col_dislike = st.columns([1, 1])
     #with col_like:
@@ -148,8 +149,8 @@ if st.session_state.get("response_shown"):
     # Mostrar selector de estrellas
     rating = st.radio(
         "⭐ ¿Qué tan buena fue la respuesta?",
-        options=[None, 1, 2, 3, 4, 5],
-        format_func=lambda x: "⭐" * x if x else "Selecciona\n", 
+        options=[1, 2, 3, 4, 5],
+        format_func=lambda x: "⭐" * x", 
         horizontal=True,
         key="rating",
         disabled=disabled
@@ -168,5 +169,6 @@ if st.session_state.get("response_shown"):
     if not disabled and rating:
         st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
         st.session_state.feedback = rating
+        st.session_state.score_ready = True
         calification_user(query, st.session_state.respuesta, str(rating))
     
