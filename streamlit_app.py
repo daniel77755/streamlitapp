@@ -116,7 +116,7 @@ if submit_button and query:
 
     
     response_api = connect_api(query)
-    st.session_state.pop("rating", None)
+    st.session_state.rating =None
     st.session_state.pop("feedback", None)
     st.session_state.pop("response_shown", False)
     
