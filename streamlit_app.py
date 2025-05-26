@@ -111,6 +111,7 @@ if submit_button and query:
     st.session_state.feedback = None
     st.session_state.response_shown = False
     st.session_state.respuesta = ""
+    st.session_state.last_rating = None  # Reinicia calificación
     
     response_api = connect_api(query)
     
@@ -128,20 +129,40 @@ if submit_button and query:
 if st.session_state.get("response_shown"):
     st.markdown(f"**💬 Respuesta:** {st.session_state.respuesta}")
 
-    col_like, col_dislike = st.columns([1, 1])
-    with col_like:
-        if st.button("👍 Me gusta"):
-            st.session_state.feedback = "like"
-    with col_dislike:
-        if st.button("👎 No me gusta"):
-            st.session_state.feedback = "dislike"
+    # Determinar si se debe deshabilitar el selector
+    disabled = st.session_state.last_rating is not None
 
+    #col_like, col_dislike = st.columns([1, 1])
+    #with col_like:
+    #    if st.button("👍 Me gusta"):
+    #        st.session_state.feedback = "like"
+    #with col_dislike:
+    #    if st.button("👎 No me gusta"):
+    #        st.session_state.feedback = "dislike"
+
+    # Mostrar selector de estrellas
+    rating = st.radio(
+        "⭐ ¿Qué tan buena fue la respuesta?",
+        options=[1, 2, 3, 4, 5],
+        format_func=lambda x: "⭐" * x,
+        horizontal=True,
+        key="rating",
+        disabled=disabled
+    )
+    
     # Mostrar estado de calificación
-    if st.session_state.feedback == "like":
-        calification_user(query,st.session_state.respuesta,"1")
-        st.success("Has calificado esta respuesta como: 👍 Me gusta")
-    elif st.session_state.feedback == "dislike":
-        calification_user(query,st.session_state.respuesta,"0")
-        st.warning("Has calificado esta respuesta como: 👎 No me gusta")
+    #if st.session_state.feedback == "like":
+    #    calification_user(query,st.session_state.respuesta,"1")
+    #    st.success("Has calificado esta respuesta como: 👍 Me gusta")
+    #elif st.session_state.feedback == "dislike":
+    #    calification_user(query,st.session_state.respuesta,"0")
+    #    st.warning("Has calificado esta respuesta como: 👎 No me gusta")
+
+    # Guardar calificación automáticamente solo una vez
+    if not disabled and rating:
+        st.session_state.last_rating = rating
+        st.session_state.feedback = rating
+        calification_user(query, st.session_state.respuesta, str(rating))
+        st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
 
     
