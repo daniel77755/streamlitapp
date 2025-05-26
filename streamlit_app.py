@@ -112,7 +112,7 @@ if submit_button and query:
     #st.session_state.response_shown = False
     #st.session_state.respuesta = ""
     #st.session_state.last_rating = None  # Reinicia calificación
-    st.session_state.pop("last_rating", None)
+    #st.session_state.pop("last_rating", None)
     st.session_state.pop("rating", None)
     st.session_state.pop("feedback", None)
     st.session_state.pop("response_shown", False)
@@ -167,5 +167,4 @@ if st.session_state.get("response_shown"):
         st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
         st.session_state.feedback = rating
         calification_user(query, st.session_state.respuesta, str(rating))
-        st.session_state.rating = None
     
