@@ -164,6 +164,6 @@ if st.session_state.get("response_shown"):
     #if not disabled and rating:
     #    st.session_state.last_rating = rating
     #    st.session_state.feedback = rating
-    #    calification_user(query, st.session_state.respuesta, str(rating))
+    #    calification_user(query, st.session_state.respuesta, str(rating)) 
 
     
