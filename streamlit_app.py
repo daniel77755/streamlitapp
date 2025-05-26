@@ -134,7 +134,7 @@ if st.session_state.get("response_shown"):
     st.markdown(f"**💬 Respuesta:** {st.session_state.respuesta}")
 
     # Determinar si se debe deshabilitar el selector
-    disabled = st.session_state.last_rating is not None
+    #disabled = st.session_state.last_rating is not None
 
     #col_like, col_dislike = st.columns([1, 1])
     #with col_like:
@@ -150,8 +150,7 @@ if st.session_state.get("response_shown"):
         options=[1, 2, 3, 4, 5],
         format_func=lambda x: "⭐" * x,
         horizontal=True,
-        key="rating",
-        disabled=disabled
+        key="rating"
     )
     
     
@@ -164,7 +163,7 @@ if st.session_state.get("response_shown"):
     #    st.warning("Has calificado esta respuesta como: 👎 No me gusta")
 
     # Guardar calificación automáticamente solo una vez
-    if not disabled and rating:
+    if rating:
         st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
         st.session_state.feedback = rating
         calification_user(query, st.session_state.respuesta, str(rating))
