@@ -148,7 +148,7 @@ if st.session_state.get("response_shown"):
         horizontal=True,
         key="rating",
         disabled=disabled
-    )
+    ) 
     
     # Mostrar estado de calificación
     #if st.session_state.feedback == "like":
