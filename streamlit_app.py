@@ -116,9 +116,9 @@ if submit_button and query:
 
     
     response_api = connect_api(query)
-    st.session_state.rating =None
-    st.session_state.pop("feedback", None)
-    st.session_state.pop("response_shown", False)
+    st.session_state.rating = None
+    st.session_state.feedback = None
+    st.session_state.response_shown = False
     
     if response_api.status_code != 200:
         st.write("⚠️ Error HTTP:", response_api.status_code)
@@ -135,7 +135,7 @@ if st.session_state.get("response_shown"):
     st.markdown(f"**💬 Respuesta:** {st.session_state.respuesta}")
 
     # Determinar si se debe deshabilitar el selector
-    #disabled = st.session_state.last_rating is not None
+    disabled = st.session_state.feedback is not None
 
     #col_like, col_dislike = st.columns([1, 1])
     #with col_like:
@@ -164,7 +164,7 @@ if st.session_state.get("response_shown"):
     #    st.warning("Has calificado esta respuesta como: 👎 No me gusta")
 
     # Guardar calificación automáticamente solo una vez
-    if rating:
+    if not disabled and rating:
         st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
         st.session_state.feedback = rating
         calification_user(query, st.session_state.respuesta, str(rating))
