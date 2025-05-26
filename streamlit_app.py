@@ -154,7 +154,7 @@ if st.session_state.get("response_shown"):
         horizontal=True,
         key="rating",
         disabled=disabled
-    )
+    ) 
     st.session_state.score_ready = True
     
     # Mostrar estado de calificación
