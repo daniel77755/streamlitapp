@@ -113,11 +113,12 @@ if submit_button and query:
     #st.session_state.respuesta = ""
     #st.session_state.last_rating = None  # Reinicia calificación
     #st.session_state.pop("last_rating", None)
+
+    
+    response_api = connect_api(query)
     st.session_state.pop("rating", None)
     st.session_state.pop("feedback", None)
     st.session_state.pop("response_shown", False)
-    
-    response_api = connect_api(query)
     
     if response_api.status_code != 200:
         st.write("⚠️ Error HTTP:", response_api.status_code)
