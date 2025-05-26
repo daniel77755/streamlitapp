@@ -155,7 +155,7 @@ if st.session_state.get("response_shown"):
         key="rating",
         disabled=disabled
     )
-    
+    st.session_state.score_ready = True
     
     # Mostrar estado de calificación
     #if st.session_state.feedback == "like":
@@ -166,9 +166,8 @@ if st.session_state.get("response_shown"):
     #    st.warning("Has calificado esta respuesta como: 👎 No me gusta")
 
     # Guardar calificación automáticamente solo una vez
-    if not disabled and rating:
+    if rating:
         st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
         st.session_state.feedback = rating
-        st.session_state.score_ready = True
         calification_user(query, st.session_state.respuesta, str(rating))
     
