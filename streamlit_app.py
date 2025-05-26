@@ -146,8 +146,9 @@ if st.session_state.get("response_shown"):
 
     # Mostrar selector de estrellas
     rating = st.radio(
+        "⭐",
         options=[None, 1, 2, 3, 4, 5],
-        format_func=lambda x: "⭐" * x if x else "⭐ ¿Qué tan buena fue la respuesta?",
+        format_func=lambda x: "⭐" * x if x else "¿Qué tan buena fue la respuesta?",
         horizontal=True,
         key="rating"
     )
