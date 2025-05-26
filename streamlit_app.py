@@ -108,10 +108,14 @@ with st.form(key='chat_form'):
     submit_button = st.form_submit_button(label='Responder')
 
 if submit_button and query:
-    st.session_state.feedback = None
-    st.session_state.response_shown = False
-    st.session_state.respuesta = ""
-    st.session_state.last_rating = None  # Reinicia calificación
+    #st.session_state.feedback = None
+    #st.session_state.response_shown = False
+    #st.session_state.respuesta = ""
+    #st.session_state.last_rating = None  # Reinicia calificación
+    st.session_state.pop("last_rating", None)
+    st.session_state.pop("rating", None)
+    st.session_state.pop("feedback", None)
+    st.session_state.pop("response_shown", False)
     
     response_api = connect_api(query)
     
@@ -149,7 +153,7 @@ if st.session_state.get("response_shown"):
         key="rating",
         disabled=disabled
     )
-    st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
+    
     
     # Mostrar estado de calificación
     #if st.session_state.feedback == "like":
@@ -161,7 +165,7 @@ if st.session_state.get("response_shown"):
 
     # Guardar calificación automáticamente solo una vez
     if not disabled and rating:
-        st.session_state.last_rating = rating
+        st.success(f"Has calificado esta respuesta con: {'⭐' * rating}")
         st.session_state.feedback = rating
         calification_user(query, st.session_state.respuesta, str(rating))
     
