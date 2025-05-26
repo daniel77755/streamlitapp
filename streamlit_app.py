@@ -148,7 +148,7 @@ if st.session_state.get("response_shown"):
     rating = st.radio(
         "⭐ ¿Qué tan buena fue la respuesta?",
         options=[None, 1, 2, 3, 4, 5],
-        format_func=lambda x: "⭐" * x if x else "Selecciona\n",
+        format_func=lambda x: "⭐" * x if x else "Selecciona\n", 
         horizontal=True,
         key="rating"
     )
