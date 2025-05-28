@@ -68,7 +68,8 @@ st.markdown("""
 def calification_user(query, answer, feedback):
     headers = {
         "x-api-key": "AIzaSyBb2222222-1111111111",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Origin": "https://mi-app.streamlit.app"
     }
     payload = json.dumps({
         "data": {
