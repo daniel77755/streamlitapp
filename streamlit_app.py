@@ -68,8 +68,7 @@ st.markdown("""
 def calification_user(query, answer, feedback):
     headers = {
         "x-api-key": "AIzaSyBb2222222-1111111111",
-        "Content-Type": "application/json",
-        "Origin": "https://mi-app.streamlit.app"
+        "Content-Type": "application/json"
     }
     payload = json.dumps({
         "data": {
@@ -78,7 +77,7 @@ def calification_user(query, answer, feedback):
             "feedback": feedback
         }
     })
-    #responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
+    responses = requests.post("https://agent-gateway-comentarios-ak877eu7.uc.gateway.dev/streamlit/comments", headers=headers, data=payload)
     return 200
     
     
