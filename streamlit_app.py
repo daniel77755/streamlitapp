@@ -77,7 +77,7 @@ def calification_user(query, answer, feedback):
             "feedback": feedback
         }
     })
-    responses = requests.post("https://agent-gateway-comentarios-ak877eu7.uc.gateway.dev/streamlit/comments", headers=headers, data=payload)
+    requests.post("https://agent-gateway-comentarios-ak877eu7.uc.gateway.dev/streamlit/comments", headers=headers, data=payload)
     return 200
     
     
