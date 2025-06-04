@@ -101,7 +101,15 @@ def connect_api(query):
     responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
     return responses
     
-
+with st.expander("¿Cómo realizar una preguntar?"):
+    st.markdown("""
+    Para hacer una pregunta correcta al agente usa la siguiente estructura
+    \n\nPara obtener la mejor respuesta sobre políticas y reglas de crédito, estructura tu pregunta indicando claramente la acción que deseas que realice nuestro Agente de Habicredit (ej. "explica", "enumera", "dime"), 
+    \nel tema específico (ej. "requisitos para radicar", "políticas de desembolso", "documentos necesarios") y cualquier condición o detalle adicional 
+    \n(ej. "para crédito hipotecario", "si ya tengo un crédito", "paso a paso"). \nSé lo más directo y específico posible para una respuesta precisa.
+    \n\nPor último, mo olvides calificar la respuesta obtenida.
+    """)
+    
 # Usa st.form para agrupar el input y botón 
 with st.form(key='chat_form'):
     query = st.text_input("Realiza las preguntas que hacen tus brokers:")
