@@ -108,7 +108,7 @@ with st.expander("¿Cómo realizar una preguntar?"):
     \nel tema específico (ej. "requisitos para radicar", "políticas de desembolso", "documentos necesarios") y cualquier condición o detalle adicional 
     \n(ej. "para crédito hipotecario", "si ya tengo un crédito", "paso a paso"). \nSé lo más directo y específico posible para una respuesta precisa.
     \n\nPor último, mo olvides calificar la respuesta obtenida.
-    """)
+    """) 
     
 # Usa st.form para agrupar el input y botón 
 with st.form(key='chat_form'):
