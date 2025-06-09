@@ -102,7 +102,7 @@ def connect_api(query):
     return responses
     
 with st.expander("¿Cómo realizar una pregunta?"):
-    st.markdown("""
+    st.markdown(""" 
     Para hacer una pregunta correcta al agente usa la siguiente
     estructura \n\n
 
