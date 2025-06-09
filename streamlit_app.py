@@ -99,10 +99,10 @@ def connect_api(query):
     })
 
     responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
-    return responses
+    return responses 
     
 with st.expander("¿Cómo realizar una pregunta?"):
-    st.markdown(""" 
+    st.markdown("""
 Para hacer una pregunta correcta al agente usa la siguiente
 estructura \n\n
 Explica ("enumera", "dime", …) los
@@ -111,7 +111,7 @@ de legalización", …)  una compra
 de cartera con BBVA \n\n
 Por último, último no olvides calificar la respuesta
 obtenida. 
-    """)
+    """) 
     
 # Usa st.form para agrupar el input y botón 
 with st.form(key='chat_form'): 
