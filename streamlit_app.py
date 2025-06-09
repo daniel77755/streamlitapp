@@ -113,7 +113,7 @@ with st.expander("¿Cómo realizar una pregunta?"):
 
         Por último, último no olvides calificar la respuesta
         obtenida. 
-    """) 
+    """)   
     
 # Usa st.form para agrupar el input y botón 
 with st.form(key='chat_form'):
