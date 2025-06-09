@@ -109,7 +109,7 @@ with st.expander("¿Cómo realizar una pregunta?"):
     Explica ("enumera", "dime", …) los
     requisitos para radicar ( "documentos necesarios", "políticas
     de legalización", …)  una compra
-    de cartera con BBVA \n\n
+    de cartera con BBVA \n\n 
 
     Por último, último no olvides calificar la respuesta
     obtenida.
