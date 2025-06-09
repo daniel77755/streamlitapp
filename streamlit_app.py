@@ -103,11 +103,11 @@ def connect_api(query):
     
 with st.expander("¿Cómo realizar una pregunta?"):
     st.markdown(""" 
-    Para hacer una pregunta correcta al agente usa la siguiente
-    estructura \n\n
+        Para hacer una pregunta correcta al agente usa la siguiente
+        estructura \n\n
 
-    Por último, último no olvides calificar la respuesta
-    obtenida. 
+        Por último, último no olvides calificar la respuesta
+        obtenida. 
     """)   
     
 # Usa st.form para agrupar el input y botón 
