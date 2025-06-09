@@ -105,10 +105,7 @@ with st.expander("¿Cómo realizar una pregunta?"):
     st.markdown(""" 
     Para hacer una pregunta correcta al agente usa la siguiente
     estructura \n\n
-    Explica ("enumera", "dime", …) los
-    requisitos para radicar ( "documentos necesarios", "políticas
-    de legalización", …)  una compra
-    de cartera con BBVA \n\n
+
     Por último, último no olvides calificar la respuesta
     obtenida. 
     """)   
