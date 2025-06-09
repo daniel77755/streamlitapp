@@ -112,7 +112,7 @@ with st.expander("¿Cómo realizar una pregunta?"):
         de cartera con BBVA \n\n 
 
         Por último, último no olvides calificar la respuesta
-        obtenida.
+        obtenida. 
     """) 
     
 # Usa st.form para agrupar el input y botón 
