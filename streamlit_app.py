@@ -101,11 +101,6 @@ def connect_api(query):
     responses = requests.post("https://agent-gateway-ak877eu7.uc.gateway.dev/streamlit/event", headers=headers, data=payload)
     return responses 
     
-with st.expander("¿Cómo realizar una pregunta?"):
-    st.markdown("""
-    rrrr
-    """)  
-    
 # Usa st.form para agrupar el input y botón 
 with st.form(key='chat_form'): 
     query = st.text_input("Realiza las preguntas que hacen tus brokers:")
