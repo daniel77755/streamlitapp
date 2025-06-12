@@ -106,6 +106,11 @@ with st.form(key='chat_form'):
     query = st.text_input("Realiza las preguntas que hacen tus brokers:")
     submit_button = st.form_submit_button(label='Responder')
 
+with st.expander("¿Cómo realizar una pregunta?"):
+    st.markdown("""
+    rrrr
+    """)      
+
 if submit_button and query:
     #st.session_state.feedback = None
     #st.session_state.response_shown = False
