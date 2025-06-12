@@ -34,7 +34,7 @@ st.markdown("""
         #background-color: #B86FFF !important;
     }
 
-
+ 
 /* New CSS for changing the shadow color of the text input when hovered */
 .stTextInput>div>div>input:hover {
     box-shadow: 2px 2px 5px rgba(0,255,0,0.75); /* Green shadow when hovered */
